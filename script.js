@@ -11,16 +11,6 @@ function updateTime(){
 
 updateTime();
 
-const _style = {
-    'position': 'absolute',
-    'border': '1px black solid',
-    'display': 'inline-block ',
-    'textAlign': 'center',
-    'top':'40%',
-    'left': '45%',
-    'color': 'black',
-}
-
 const numArray = [
   3,
   4,
@@ -39,13 +29,14 @@ const numArray = [
 const hourStyle = (index) => {
     const x = btnPosX(index), y = btnPosY(index);
     console.log(`${y} ${x}`)
-    return `
+    return (`
         "position: absolute;
-        inset: ${y}rem ${x}rem;
+        top: ${y}rem;
+        left: ${x}rem;
         text-align: left;
-        width: fit-content;
-        height: fit-content;
-        font-size: 24px;"`
+        width: 10px;
+        height: 10px;
+        font-size: 32px;"`)
 }
 
 function calcAngle(arr, index){ // calculate radians not degrees

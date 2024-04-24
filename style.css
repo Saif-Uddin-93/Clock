@@ -22,27 +22,29 @@ main {
         width: 500px;
         border: 5px solid black;
         border-radius: 50%;
-        & .long-hand, .short-hand {
+        & .hours {
+            /* height: auto;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center; */
+            top: -4%;
+            left: -2%;
             position: relative;
-            width: 5px;
-            background-color: black;
+        }
+        & .long-hand, .short-hand {
+            position: absolute;
         }
         & .long-hand {
-            position: absolute;
-            top: 230px;
+            top: 27.5%;
             height: 220px;
+            border: 3px solid black;
         }
         & .short-hand {
-            position: relative;
-            top: -65px;
+            top: 38.5%;
             height: 130px;
-            background-color: brown;
-            visibility: hidden;
-        }
-        & .hours {
-            position: relative;
-            top: -12.5px;
-            left: -12.5px;
+            border: 3px solid brown;
+            /* visibility: hidden; */
         }
     }
 }
