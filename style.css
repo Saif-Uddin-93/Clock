@@ -1,0 +1,14 @@
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.digital-clock {
+    font-size: 64px;
+    text-align: center;
+}
+.analogue-clock {
+    position: absolute;
+    text-align: center;
+}
