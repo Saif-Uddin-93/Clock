@@ -28,16 +28,21 @@ main {
             background-color: black;
         }
         & .long-hand {
-            top: -110px;
+            position: absolute;
+            top: 230px;
             height: 220px;
         }
         & .short-hand {
+            position: relative;
             top: -65px;
             height: 130px;
             background-color: brown;
+            visibility: hidden;
         }
         & .hours {
             position: relative;
+            top: -12.5px;
+            left: -12.5px;
         }
     }
 }

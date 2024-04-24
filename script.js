@@ -42,7 +42,7 @@ const hourStyle = (index) => {
     return `
         "position: absolute;
         inset: ${y}rem ${x}rem;
-        text-align: center;
+        text-align: left;
         width: fit-content;
         height: fit-content;
         font-size: 24px;"`
@@ -52,14 +52,14 @@ function calcAngle(arr, index){ // calculate radians not degrees
     return index*Math.PI*2/arr.length
 }
 
-const btnPosX = (index, radius=10)=>{
+const btnPosX = (index, radius=14)=>{
     return radius * Math.cos(calcAngle(numArray, index))
 }
 
-const btnPosY = (index, radius=10)=>{
+const btnPosY = (index, radius=14)=>{
     return radius * Math.sin(calcAngle(numArray, index))
 }
 //console.log(hourStyle());
 numArray.map((hour, index)=>(
-    $('.hours').append($(`<div style=${hourStyle(index)}>${hour}</div>`))
+    $('.hours').append($(`<div class="${hour}" style=${hourStyle(index)}>${hour}</div>`))
 ))
