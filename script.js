@@ -34,8 +34,8 @@ const hourStyle = (index) => {
         top: ${y}rem;
         left: ${x}rem;
         text-align: left;
-        width: 10px;
-        height: 10px;
+        width: 0px;
+        height: 0px;
         font-size: 32px;"`)
 }
 

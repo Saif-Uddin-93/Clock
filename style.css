@@ -1,4 +1,5 @@
 main {
+    position: relative;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -14,37 +15,43 @@ main {
 
 .analogue-clock {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     & .ac-border {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        position: relative;
         height: 500px;
         width: 500px;
-        border: 5px solid black;
+        border: 15px solid black;
         border-radius: 50%;
-        & .hours {
-            /* height: auto;
-            width: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center; */
-            top: -4%;
-            left: -2%;
-            position: relative;
-        }
-        & .long-hand, .short-hand {
-            position: absolute;
-        }
-        & .long-hand {
-            top: 27.5%;
-            height: 220px;
-            border: 3px solid black;
-        }
-        & .short-hand {
-            top: 38.5%;
-            height: 130px;
-            border: 3px solid brown;
-            /* visibility: hidden; */
-        }
+    }
+    & .hours {
+        position: absolute;
+        top: 46.5%;
+        left: 48.5%;
+    }
+    & .long-hand, .short-hand {
+        position: absolute;
+        top: 50%;
+        width: 5px;
+    }
+    & .long-hand {
+        height: 220px;
+        background-color: black;
+        /* visibility: hidden; */
+    }
+    & .short-hand {
+        /* visibility: hidden; */
+        /* top: 50%; */
+        height: 130px;
+        width: 7px;
+        background-color: brown;
+    }
+    & .center-point{
+        /* visibility: hidden; */
+        position: absolute;
+        border: 15px solid black;
+        border-radius: 50%;
     }
 }
