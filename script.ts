@@ -1,8 +1,8 @@
-const digiClock = $("#digital-clock");
-//const anaClock = $('#ac-border');
-const angleOffset = 180;
+const digiClockTS = document.getElementById(".digital-clock");
+const anaClockTS = document.getElementById('.ac-border');
+const angleOffsetTS = 180;
 
-function updateTime(){
+function updateTimeTS(){
     setInterval(()=>{
         let time = dayjs().format('HH:mm:ss');
         digiClock.text(time);
@@ -14,9 +14,9 @@ function updateTime(){
         let minsAngle = ((360/60)*minutes)+angleOffset;
         let hourAngle = ((360/12)*hours)+angleOffset + (minutes/2);
         // console.log(minsAngle);
-        calcAngleHand("#wrapper-second-hand", secsAngle);
-        calcAngleHand("#wrapper-minute-hand", minsAngle);
-        calcAngleHand("#wrapper-hour-hand", hourAngle);
+        calcAngleHand(".wrapper-second-hand", secsAngle);
+        calcAngleHand(".wrapper-minute-hand", minsAngle);
+        calcAngleHand(".wrapper-hour-hand", hourAngle);
     }, 1000);
 }
 
@@ -67,7 +67,7 @@ const btnPosY = (index, radius=8)=>{
 }
 //console.log(hourStyle());
 numArray.map((hour, index)=>(
-    $('#hours').append($(`<div id="${hour}" style=${hourStyle(index)}>${hour}</div>`))
+    $('.hours').append($(`<div class="${hour}" style=${hourStyle(index)}>${hour}</div>`))
 ))
 
 const canWakeLock = () =>'wakeLock' in navigator;
