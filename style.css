@@ -1,6 +1,11 @@
 html {
     background-color: rgb(80, 80, 80);
 }
+
+body{
+    margin: 0;
+}
+
 main {
     top: -10vh;
     position: relative;
