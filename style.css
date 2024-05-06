@@ -39,13 +39,6 @@ main {
         height: 50%;
         width: 50%;
     }
-    /* & .wrapper-minute-hand{
-    }
-    & .wrapper-hour-hand{
-        height: 50%;
-        width: 50%;
-        transform: rotate(90deg);
-    } */
     & .center-point{
         /* visibility: hidden; */
         position: absolute;

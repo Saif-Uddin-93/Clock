@@ -1,9 +1,5 @@
 const digiClock = $(".digital-clock");
 const anaClock = $('.ac-border');
-// let time = dayjs().format('HH:mm:ss');
-
-// let hours = clock.getHours();
-// let minutes = clock.getMinutes();
 
 function updateTime(){
     setInterval(()=>{
@@ -15,8 +11,8 @@ function updateTime(){
         let hours = clock.getHours()-30;
         let secsAngle = (360/60)*seconds;
         let minsAngle = (360/60)*minutes;
-        let hourAngle = (360/12)*hours;
-        // console.log(angle);
+        let hourAngle = (360/12)*hours + (minsAngle/2)
+        console.log(hourAngle);
         $(".wrapper-second-hand").css("transform", `rotate(${secsAngle}deg)`)
         $(".wrapper-minute-hand").css("transform", `rotate(${minsAngle}deg)`)
         $(".wrapper-hour-hand").css("transform", `rotate(${hourAngle}deg)`)
@@ -68,3 +64,21 @@ const btnPosY = (index, radius=14)=>{
 numArray.map((hour, index)=>(
     $('.hours').append($(`<div class="${hour}" style=${hourStyle(index)}>${hour}</div>`))
 ))
+
+const canWakeLock = () =>'wakeLock' in navigator;
+
+let wakelock;
+async function lockWakeState() {
+  if(!canWakeLock()) return;
+  try {
+    wakelock = await navigator.wakeLock.request();
+    wakelock.addEventListener('release', () => {
+      console.log('Screen Wake State Locked:', !wakelock.released);
+    });
+    console.log('Screen Wake State Locked:', !wakelock.released);
+  } catch(e) {
+    console.error('Failed to lock wake state with reason:', e.message);
+  }
+}
+
+lockWakeState();
