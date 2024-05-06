@@ -24,8 +24,8 @@ main {
     position: relative;
     & .ac-border {
         position: relative;
-        height: 500px;
-        width: 500px;
+        height: 300px;
+        width: 300px;
         border: 15px solid black;
         border-radius: 50%;
     }
@@ -45,7 +45,7 @@ main {
     & .center-point{
         /* visibility: hidden; */
         position: absolute;
-        border: 15px solid black;
+        border: 10px solid black;
         border-radius: 50%;
         left: calc(49% - 5px);
     }
@@ -59,17 +59,17 @@ main {
     left: calc(50% + 5px); */
 }
 & .minute-hand {
-    height: 200px;
+    height: 90px;
     width: 5px;
     background-color: black;
 }
 & .hour-hand {
-    height: 130px;
+    height: 60px;
     width: 7px;
     background-color: brown;
 }
 & .second-hand {
-    height: 220px;
+    height: 100px;
     width:3px;
     background-color: blue;
 }

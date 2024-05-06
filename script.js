@@ -8,15 +8,19 @@ function updateTime(){
         let clock = new Date()
         let seconds = clock.getSeconds()-30;
         let minutes = clock.getMinutes()-30;
-        let hours = clock.getHours()-30;
+        let hours = clock.getHours()-4;
         let secsAngle = (360/60)*seconds;
         let minsAngle = (360/60)*minutes;
-        let hourAngle = (360/12)*hours + (minsAngle/2)
-        console.log(hourAngle);
-        $(".wrapper-second-hand").css("transform", `rotate(${secsAngle}deg)`)
-        $(".wrapper-minute-hand").css("transform", `rotate(${minsAngle}deg)`)
-        $(".wrapper-hour-hand").css("transform", `rotate(${hourAngle}deg)`)
+        let hourAngle = (360/12)*hours + minsAngle/2;
+        // console.log(Math.abs(minsAngle/2));
+        calcAngleHand(".wrapper-second-hand", secsAngle);
+        calcAngleHand(".wrapper-minute-hand", minsAngle);
+        calcAngleHand(".wrapper-hour-hand", hourAngle);
     }, 1000);
+}
+
+function calcAngleHand(css, ang){
+    $(css).css("transform", `rotate(${ang}deg)`)
 }
 
 updateTime();
@@ -53,11 +57,11 @@ function calcAngle(arr, index){ // calculate radians not degrees
     return index*Math.PI*2/arr.length
 }
 
-const btnPosX = (index, radius=14)=>{
+const btnPosX = (index, radius=8)=>{
     return radius * Math.cos(calcAngle(numArray, index))
 }
 
-const btnPosY = (index, radius=14)=>{
+const btnPosY = (index, radius=8)=>{
     return radius * Math.sin(calcAngle(numArray, index))
 }
 //console.log(hourStyle());
