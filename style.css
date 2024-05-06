@@ -2,12 +2,30 @@ html {
     background-color: rgb(80, 80, 80);
 }
 main {
+    top: -20vh;
     position: relative;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+#full-screen{
+    margin-top: 5vh;
+    padding: 0.5rem;
+    background-color: blanchedalmond;
+    border: 5px solid rgb(255, 210, 140);
+    font-family:'Verdana', 'Geneva', 'Tahoma', 'sans-serif';
+    font-size: large;
+    font-weight: bolder;
+    &:hover{
+        background-color: rgb(255, 220, 170);
+        border: 5px solid rgb(255, 190, 90);
+    }
+    &:active{
+        background-color: rgb(255, 190, 100);
+    }
 }
 
 #digital-clock {

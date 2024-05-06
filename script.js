@@ -2,6 +2,19 @@ const digiClock = $("#digital-clock");
 //const anaClock = $('#ac-border');
 const angleOffset = 180;
 
+function toggleFullscreen() {
+    let elem = document.querySelector("html");
+  
+    if (!document.fullscreenElement) {
+        elem.requestFullscreen().catch((err) => {
+        alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+        });
+    } else {
+        document.exitFullscreen();
+    }
+}
+  
+
 function updateTime(){
     setInterval(()=>{
         let time = dayjs().format('HH:mm:ss');
