@@ -15,7 +15,7 @@ main {
 
 .analogue-clock {
     text-align: center;
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -31,27 +31,49 @@ main {
         top: 46.5%;
         left: 48.5%;
     }
-    & .long-hand, .short-hand {
+    & .wrapper-minute-hand, & .wrapper-hour-hand, & .wrapper-second-hand{
+        display:flex;
+        justify-content: center;
+        align-items: center;
         position: absolute;
-        top: 50%;
-        width: 5px;
+        height: 50%;
+        width: 50%;
     }
-    & .long-hand {
-        height: 220px;
-        background-color: black;
-        /* visibility: hidden; */
+    /* & .wrapper-minute-hand{
     }
-    & .short-hand {
-        /* visibility: hidden; */
-        /* top: 50%; */
-        height: 130px;
-        width: 7px;
-        background-color: brown;
-    }
+    & .wrapper-hour-hand{
+        height: 50%;
+        width: 50%;
+        transform: rotate(90deg);
+    } */
     & .center-point{
         /* visibility: hidden; */
         position: absolute;
         border: 15px solid black;
         border-radius: 50%;
+        left: calc(49% - 5px);
     }
+}
+
+.minute-hand, .hour-hand, .second-hand {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    /* top: calc(49% - 1px);
+    left: calc(50% + 5px); */
+}
+& .minute-hand {
+    height: 200px;
+    width: 5px;
+    background-color: black;
+}
+& .hour-hand {
+    height: 130px;
+    width: 7px;
+    background-color: brown;
+}
+& .second-hand {
+    height: 220px;
+    width:3px;
+    background-color: blue;
 }

@@ -1,11 +1,25 @@
-let digiClock = $(".digital-clock");
-let time = dayjs().format('HH:mm:ss');
-let anaClock = $('.ac-border');
+const digiClock = $(".digital-clock");
+const anaClock = $('.ac-border');
+// let time = dayjs().format('HH:mm:ss');
+
+// let hours = clock.getHours();
+// let minutes = clock.getMinutes();
 
 function updateTime(){
     setInterval(()=>{
-        time = dayjs().format('HH:mm:ss');
+        let time = dayjs().format('HH:mm:ss');
         digiClock.text(time);
+        let clock = new Date()
+        let seconds = clock.getSeconds()-30;
+        let minutes = clock.getMinutes()-30;
+        let hours = clock.getHours()-30;
+        let secsAngle = (360/60)*seconds;
+        let minsAngle = (360/60)*minutes;
+        let hourAngle = (360/12)*hours;
+        // console.log(angle);
+        $(".wrapper-second-hand").css("transform", `rotate(${secsAngle}deg)`)
+        $(".wrapper-minute-hand").css("transform", `rotate(${minsAngle}deg)`)
+        $(".wrapper-hour-hand").css("transform", `rotate(${hourAngle}deg)`)
     }, 1000);
 }
 
