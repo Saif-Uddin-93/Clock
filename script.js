@@ -6,13 +6,13 @@ function updateTime(){
         let time = dayjs().format('HH:mm:ss');
         digiClock.text(time);
         let clock = new Date()
-        let seconds = clock.getSeconds()-30;
-        let minutes = clock.getMinutes()-30;
-        let hours = clock.getHours()-4;
-        let secsAngle = (360/60)*seconds;
-        let minsAngle = (360/60)*minutes;
-        let hourAngle = (360/12)*hours + minsAngle/2;
-        // console.log(Math.abs(minsAngle/2));
+        let seconds = clock.getSeconds();
+        let minutes = clock.getMinutes();
+        let hours = clock.getHours();
+        let secsAngle = ((360/60)*seconds)+180;
+        let minsAngle = ((360/60)*minutes)+180;
+        let hourAngle = ((360/12)*hours)+180 + (minutes/2);
+        console.log(minsAngle);
         calcAngleHand(".wrapper-second-hand", secsAngle);
         calcAngleHand(".wrapper-minute-hand", minsAngle);
         calcAngleHand(".wrapper-hour-hand", hourAngle);
