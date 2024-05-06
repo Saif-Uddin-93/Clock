@@ -1,5 +1,6 @@
 const digiClock = $(".digital-clock");
 const anaClock = $('.ac-border');
+const angleOffset = 180;
 
 function updateTime(){
     setInterval(()=>{
@@ -9,10 +10,10 @@ function updateTime(){
         let seconds = clock.getSeconds();
         let minutes = clock.getMinutes();
         let hours = clock.getHours();
-        let secsAngle = ((360/60)*seconds)+180;
-        let minsAngle = ((360/60)*minutes)+180;
-        let hourAngle = ((360/12)*hours)+180 + (minutes/2);
-        console.log(minsAngle);
+        let secsAngle = ((360/60)*seconds)+angleOffset;
+        let minsAngle = ((360/60)*minutes)+angleOffset;
+        let hourAngle = ((360/12)*hours)+angleOffset + (minutes/2);
+        // console.log(minsAngle);
         calcAngleHand(".wrapper-second-hand", secsAngle);
         calcAngleHand(".wrapper-minute-hand", minsAngle);
         calcAngleHand(".wrapper-hour-hand", hourAngle);
@@ -42,7 +43,7 @@ const numArray = [
 
 const hourStyle = (index) => {
     const x = btnPosX(index), y = btnPosY(index);
-    console.log(`${y} ${x}`)
+    // console.log(`${y} ${x}`)
     return (`
         "position: absolute;
         top: ${y}rem;
