@@ -2,7 +2,7 @@ html {
     background-color: rgb(80, 80, 80);
 }
 main {
-    top: -20vh;
+    top: -10vh;
     position: relative;
     height: 100vh;
     display: flex;
@@ -92,4 +92,29 @@ main {
     height: 100px;
     width:3px;
     background-color: black;
+}
+
+@media (width > 767px) {
+    main {
+        top: -3vh;
+    }
+    #ac-border {
+        height: 500px !important;
+        width: 500px !important;
+    }
+    & #minute-hand {
+        height: 200px;
+    }
+    & #hour-hand {
+        height: 130px;
+    }
+    & #second-hand {
+        height: 220px;
+    }
+    & #hours {
+        top: 46% !important;
+        /* top: 44.5%; */
+        left: 48.5% !important;
+        /* left: 47.5%; */
+    }
 }

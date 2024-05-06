@@ -71,11 +71,11 @@ function calcAngle(arr, index){ // calculate radians not degrees
     return index*Math.PI*2/arr.length
 }
 
-const btnPosX = (index, radius=8)=>{
+const btnPosX = (index, radius = window.innerWidth > 767 ? 14 : 8)=>{
     return radius * Math.cos(calcAngle(numArray, index))
 }
 
-const btnPosY = (index, radius=8)=>{
+const btnPosY = (index, radius = window.innerWidth > 767 ? 14 : 8)=>{
     return radius * Math.sin(calcAngle(numArray, index))
 }
 //console.log(hourStyle());
