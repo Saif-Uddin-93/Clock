@@ -51,6 +51,7 @@ main {
         width: 300px;
         border: 15px solid black;
         border-radius: 50%;
+        background-color: rgb(200, 200, 200);
     }
     & #hours {
         position: absolute;
