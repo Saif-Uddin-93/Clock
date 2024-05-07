@@ -11,7 +11,7 @@ body{
 }
 
 main {
-    top: -12vh;
+    top: -10vh;
     position: relative;
     height: 100vh;
     display: flex;
@@ -110,7 +110,7 @@ main {
 
 @media (width > 767px) {
     main {
-        top: -3vh;
+        top: -5vh;
     }
     #ac-border {
         height: 500px !important;
