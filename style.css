@@ -21,7 +21,7 @@ main {
 }
 
 #full-screen{
-    margin-top: 5vh;
+    margin-top: 2rem;
     padding: 0.5rem;
     background-color: blanchedalmond;
     border: 5px solid rgb(255, 210, 140);
@@ -42,9 +42,10 @@ main {
     text-align: center;
     height: fit-content;
     background-color: rgb(200, 200, 200);
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem;
     margin: 0.5rem;
-    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    border-radius: 20px;
 }
 
 #analogue-clock {
