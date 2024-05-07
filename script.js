@@ -111,7 +111,7 @@ const btnPosY = (index, radius = window.innerWidth > 767 ? 14 : 8)=>{
 //console.log(hourStyle());
 
 function positionHours(){
-    $("#analogue-clock").append("<div id='hours'>");
+    $("<div id='hours'>").insertAfter('#year');
     numArray.map((hour, index)=>(
         $('#hours').append($(`<div id="${hour}" style=${hourStyle(index)}>${hour}</div>`))
     ))
