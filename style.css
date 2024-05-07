@@ -11,9 +11,10 @@ body{
 }
 
 main {
-    /* margin-top: -10vh; */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     position: relative;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,12 +39,13 @@ main {
 }
 
 #digital-clock {
+    position: relative;
     font-size: 64px;
     text-align: center;
     height: fit-content;
     background-color: rgb(200, 200, 200);
     padding: 0.5rem 0.5rem;
-    margin: 1rem;
+    margin: 0.5rem;
     margin-bottom: 1.5rem;
     border-radius: 20px;
 }
@@ -111,11 +113,15 @@ main {
 
 @media (width > 767px) {
     /* main {
-        margin-top: 10vh;
+        margin-top: 5vh;
     } */
     #ac-border {
         height: 500px !important;
         width: 500px !important;
+    }
+    #digital-clock {
+        margin: 1rem;
+        margin-bottom: 1.5rem;
     }
     & #minute-hand {
         height: 200px;
