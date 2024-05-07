@@ -1,5 +1,5 @@
 * {
-    color: black;
+    color: black !important;
 }
 
 html {
@@ -11,7 +11,7 @@ body{
 }
 
 main {
-    top: -10vh;
+    /* margin-top: -10vh; */
     position: relative;
     height: 100vh;
     display: flex;
@@ -110,9 +110,9 @@ main {
 }
 
 @media (width > 767px) {
-    main {
-        top: -5vh;
-    }
+    /* main {
+        margin-top: 10vh;
+    } */
     #ac-border {
         height: 500px !important;
         width: 500px !important;
