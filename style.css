@@ -110,7 +110,7 @@ main {
 
 @media (width > 767px) {
     main {
-        top: -5vh;
+        top: -8vh;
     }
     #ac-border {
         height: 500px !important;
