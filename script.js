@@ -34,6 +34,13 @@ function updateTime(){
         let secsAngle = ((360/60)*seconds)+angleOffset;
         let minsAngle = ((360/60)*minutes)+angleOffset;
         let hourAngle = ((360/12)*hours)+angleOffset + (minutes/2);
+        let day = dayjs().format('ddd D');
+        let month = dayjs().format('MMM');
+        let year = dayjs().format('YYYY');
+        // console.log(day, month, year);
+        $('#day').text(day);
+        $('#month').text(month);
+        $('#year').text(year);
         // console.log(minsAngle);
         calcAngleHand("#wrapper-second-hand", secsAngle);
         calcAngleHand("#wrapper-minute-hand", minsAngle);

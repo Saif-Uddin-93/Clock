@@ -1,5 +1,6 @@
 * {
     color: black !important;
+    font-family:'Verdana', 'Geneva', 'Tahoma', 'sans-serif';
 }
 
 html {
@@ -26,7 +27,6 @@ main {
     padding: 0.5rem;
     background-color: blanchedalmond;
     border: 5px solid rgb(255, 210, 140);
-    font-family:'Verdana', 'Geneva', 'Tahoma', 'sans-serif';
     font-size: large;
     font-weight: bolder;
     &:hover{
@@ -98,17 +98,17 @@ main {
 & #minute-hand {
     height: 90px;
     width: 5px;
-    background-color: rgb(0, 0, 200);
+    background-color: rgba(0, 0, 200, 0.99);
 }
 & #hour-hand {
     height: 60px;
     width: 7px;
-    background-color: brown;
+    background-color: rgba(165, 42, 42, 0.99);
 }
 & #second-hand {
     height: 100px;
     width:3px;
-    background-color: black;
+    background-color: rgba(40, 40, 40, 0.99);
 }
 
 @media (width > 767px) {
@@ -118,6 +118,24 @@ main {
     #ac-border {
         height: 500px !important;
         width: 500px !important;
+    }
+    #day, #month, #year {
+        position: absolute;
+        height: fit-content;
+        width: fit-content;
+        font-size: 30px;
+    }
+    #day {
+        bottom: 14rem;
+        left: 6.5rem;
+    }
+    #month {
+        bottom: 14rem;
+        right: 7.5rem;
+    }
+    #year {
+        bottom: 7rem;
+        left: 14rem;
     }
     #digital-clock {
         margin: 1rem;
