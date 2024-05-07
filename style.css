@@ -96,7 +96,7 @@ main {
 & #minute-hand {
     height: 90px;
     width: 5px;
-    background-color: blue;
+    background-color: rgb(0, 0, 200);
 }
 & #hour-hand {
     height: 60px;

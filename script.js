@@ -15,8 +15,16 @@ function toggleFullscreen() {
 }
   
 
+let width = window.innerWidth;
 function updateTime(){
     setInterval(()=>{
+        if(window.innerWidth!==width){
+            $("#hours").remove();
+            positionHours();
+            width = window.innerWidth;
+            // console.log(width);
+        }
+
         let time = dayjs().format('HH:mm:ss');
         digiClock.text(time);
         let clock = new Date()
@@ -79,9 +87,14 @@ const btnPosY = (index, radius = window.innerWidth > 767 ? 14 : 8)=>{
     return radius * Math.sin(calcAngle(numArray, index))
 }
 //console.log(hourStyle());
-numArray.map((hour, index)=>(
-    $('#hours').append($(`<div id="${hour}" style=${hourStyle(index)}>${hour}</div>`))
-))
+
+function positionHours(){
+    $("#analogue-clock").append("<div id='hours'>");
+    numArray.map((hour, index)=>(
+        $('#hours').append($(`<div id="${hour}" style=${hourStyle(index)}>${hour}</div>`))
+    ))
+}
+positionHours();
 
 const canWakeLock = () =>'wakeLock' in navigator;
 
