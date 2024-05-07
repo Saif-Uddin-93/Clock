@@ -13,9 +13,9 @@ function toggleFullscreen() {
         document.exitFullscreen();
     }
 }
-  
 
 let width = window.innerWidth;
+
 function updateTime(){
     setInterval(()=>{
         if(window.innerWidth!==width){
@@ -24,23 +24,26 @@ function updateTime(){
             width = window.innerWidth;
             // console.log(width);
         }
-
+        if(window.innerWidth>767) {
+            showDate('#day', 'ddd D', 'block');
+            showDate('#month', 'MMM', 'block');
+            showDate('#year', 'YYYY', 'block');
+        }
+        else {
+            showDate('#day', undefined, 'none');
+            showDate('#month', undefined, 'none');
+            showDate('#year', undefined, 'none');
+        }
         let time = dayjs().format('HH:mm:ss');
         digiClock.text(time);
-        let clock = new Date()
+        let clock = new Date();
         let seconds = clock.getSeconds();
         let minutes = clock.getMinutes();
         let hours = clock.getHours();
         let secsAngle = ((360/60)*seconds)+angleOffset;
         let minsAngle = ((360/60)*minutes)+angleOffset;
         let hourAngle = ((360/12)*hours)+angleOffset + (minutes/2);
-        let day = dayjs().format('ddd D');
-        let month = dayjs().format('MMM');
-        let year = dayjs().format('YYYY');
-        // console.log(day, month, year);
-        $('#day').text(day);
-        $('#month').text(month);
-        $('#year').text(year);
+        
         // console.log(minsAngle);
         calcAngleHand("#wrapper-second-hand", secsAngle);
         calcAngleHand("#wrapper-minute-hand", minsAngle);
@@ -49,7 +52,16 @@ function updateTime(){
 }
 
 function calcAngleHand(css, ang){
-    $(css).css("transform", `rotate(${ang}deg)`)
+    $(css).css("transform", `rotate(${ang}deg)`);
+}
+
+function showDate(id, format, display){
+    if(display==='none') {
+        $(id).css('display', display);
+        return
+    }
+    $(id).css('display', display);
+    $(id).text(dayjs().format(format));
 }
 
 updateTime();
@@ -77,9 +89,12 @@ const hourStyle = (index) => {
         top: ${y}rem;
         left: ${x}rem;
         text-align: left;
-        width: 0px;
-        height: 0px;
-        font-size: 32px;"`)
+        width: fit-content;
+        height: fit-content;
+        font-size: 32px;
+        background-color: rgba(190, 190, 190, 0.7);
+        border-radius: 10px;
+        padding: 1px 3px"`)
 }
 
 function calcAngle(arr, index){ // calculate radians not degrees

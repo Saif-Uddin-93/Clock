@@ -69,7 +69,7 @@ main {
         /* top: 46#5%; */
         top: 44.5%;
         /* left: 48#5%; */
-        left: 47.5%;
+        left: 46%;
     }
     & #wrapper-minute-hand, & #wrapper-hour-hand, & #wrapper-second-hand{
         display:flex;
@@ -98,17 +98,17 @@ main {
 & #minute-hand {
     height: 90px;
     width: 5px;
-    background-color: rgba(0, 0, 200, 0.99);
+    background-color: rgba(0, 0, 200, 0.95);
 }
 & #hour-hand {
     height: 60px;
     width: 7px;
-    background-color: rgba(165, 42, 42, 0.99);
+    background-color: rgba(165, 42, 42, 0.95);
 }
 & #second-hand {
     height: 100px;
     width:3px;
-    background-color: rgba(40, 40, 40, 0.99);
+    background-color: rgba(40, 40, 40, 0.95);
 }
 
 @media (width > 767px) {
@@ -120,9 +120,14 @@ main {
         width: 500px !important;
     }
     #day, #month, #year {
+        background-color: rgba(190, 190, 190, 0.7);
+        border-radius: 10px;
         position: absolute;
         height: fit-content;
         width: fit-content;
+        padding: 5px 10px;
+        /* padding-left: 10px;
+        padding-right: 10px; */
         font-size: 30px;
     }
     #day {
@@ -135,7 +140,7 @@ main {
     }
     #year {
         bottom: 7rem;
-        left: 14rem;
+        left: 13.5rem;
     }
     #digital-clock {
         margin: 1rem;
@@ -151,9 +156,9 @@ main {
         height: 220px;
     }
     & #hours {
-        top: 46% !important;
+        top: 46.2% !important;
         /* top: 44.5%; */
-        left: 48.5% !important;
+        left: 47.5% !important;
         /* left: 47.5%; */
     }
 }
