@@ -139,7 +139,7 @@ main {
     #day::before, #month::before, #year::before {
         top: -7%;
         left: -4%;
-        height: calc(100% + 4px);
+        height: calc(100% + 3px);
         width: calc(100% + 4px);
         /* width: 105%; */
         position: absolute;
@@ -149,11 +149,17 @@ main {
         /* background-color: rgb(200, 200, 200); */
     }
     #day::before{
-        width: calc(100% + 5px);
+        width: calc(100% + 4px);
     }
     #month::before{
         left: -5%;
         width: calc(100% + 5px);
+    }
+    #year::before{
+        top: -8%;
+        left: -4%;
+        height: calc(99.5% + 4px);
+        width: calc(100% + 4px);
     }
     #day {
         bottom: 14rem;
