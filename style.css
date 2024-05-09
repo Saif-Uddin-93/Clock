@@ -120,7 +120,8 @@ main {
         width: 500px !important;
     }
     #day, #month, #year {
-        background-color: rgba(190, 190, 190, 0.7);
+        background-color: rgba(210, 210, 210, 0.7);
+        border: 4px solid rgba(180, 180, 180, 0.7);
         border-radius: 10px;
         position: absolute;
         height: fit-content;
@@ -129,6 +130,30 @@ main {
         /* padding-left: 10px;
         padding-right: 10px; */
         font-size: 30px;
+    }
+    /* .date {
+        height: fit-content;
+        width:fit-content;
+        font-size: 30px;    
+    } */
+    #day::before, #month::before, #year::before {
+        top: -7%;
+        left: -4%;
+        height: calc(100% + 4px);
+        width: calc(100% + 4px);
+        /* width: 105%; */
+        position: absolute;
+        content: '';
+        border: 2px solid rgba(150, 150, 150, 0.7);
+        border-radius: 10px;
+        /* background-color: rgb(200, 200, 200); */
+    }
+    #day::before{
+        width: calc(100% + 5px);
+    }
+    #month::before{
+        left: -5%;
+        width: calc(100% + 5px);
     }
     #day {
         bottom: 14rem;

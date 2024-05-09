@@ -57,9 +57,11 @@ function calcAngleHand(css, ang){
 
 function showDate(id, format, display){
     if(display==='none') {
+        //$(id).removeClass('date');
         $(id).css('display', display);
         return
     }
+    //$(id).addClass('date');
     $(id).css('display', display);
     $(id).text(dayjs().format(format));
 }
